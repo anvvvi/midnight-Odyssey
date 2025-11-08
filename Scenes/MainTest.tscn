@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4bnia1t1r645"]
+[gd_scene load_steps=5 format=3 uid="uid://d4bnia1t1r645"]
 
 [ext_resource type="Texture2D" uid="uid://d1hxm64cy77mp" path="res://icon.svg" id="1_c2270"]
 [ext_resource type="Script" uid="uid://cm6gtbrsodk8o" path="res://icon.gd" id="2_bhhyf"]
+[ext_resource type="PackedScene" uid="uid://sth6lqv0lr0r" path="res://Scenes/block.tscn" id="2_c2270"]
 [ext_resource type="PackedScene" uid="uid://digt3dpmsfvjv" path="res://Scenes/Player.tscn" id="3_bhhyf"]
 
 [node name="Node2D" type="Node2D"]
@@ -12,3 +13,6 @@ texture = ExtResource("1_c2270")
 script = ExtResource("2_bhhyf")
 
 [node name="Player" parent="." instance=ExtResource("3_bhhyf")]
+
+[node name="Block" parent="." instance=ExtResource("2_c2270")]
+position = Vector2(635, 313)
