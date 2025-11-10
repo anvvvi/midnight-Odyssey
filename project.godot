@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Midnight"
-run/main_scene="uid://d4bnia1t1r645"
+run/main_scene="uid://c3nalh6x31yk5"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

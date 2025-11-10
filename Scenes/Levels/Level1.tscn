@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3nalh6x31yk5"]
+
+[ext_resource type="Texture2D" uid="uid://cakipu35oe6lh" path="res://Background/BackgroundLevel1.1.PNG" id="1_4d3fe"]
+[ext_resource type="Texture2D" uid="uid://ty7qf8r3ubu1" path="res://Background/BackgroundLevel1.2.jpg" id="2_3ipdw"]
+[ext_resource type="Texture2D" uid="uid://bjitqlp1f6c4a" path="res://Background/BackgroundLevel1.3.jpg" id="3_8h4de"]
+[ext_resource type="Texture2D" uid="uid://dvqhmc78knoon" path="res://Background/BackgroundLevel1.4.jpg" id="4_jcebb"]
+[ext_resource type="PackedScene" uid="uid://digt3dpmsfvjv" path="res://Scenes/Player/Player.tscn" id="5_f3nwb"]
+[ext_resource type="PackedScene" uid="uid://dn73e6m3xfa1" path="res://Scenes/UI/UI.tscn" id="6_57lp3"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="BackgroundLevel1_1" type="Sprite2D" parent="Background"]
+position = Vector2(256, 255)
+texture = ExtResource("1_4d3fe")
+
+[node name="BackgroundLevel1_2" type="Sprite2D" parent="Background"]
+position = Vector2(768, 256)
+texture = ExtResource("2_3ipdw")
+
+[node name="BackgroundLevel1_3" type="Sprite2D" parent="Background"]
+position = Vector2(1280, 256)
+texture = ExtResource("3_8h4de")
+
+[node name="BackgroundLevel1_4" type="Sprite2D" parent="Background"]
+position = Vector2(1792, 256)
+texture = ExtResource("4_jcebb")
+
+[node name="Houses" type="StaticBody2D" parent="Background"]
+
+[node name="MainArea" type="CollisionPolygon2D" parent="Background/Houses"]
+polygon = PackedVector2Array(-1, 1, 661, 254, 661, 330, 563, 328, 554, 267, 477, 262, 479, 327, 368, 326, 341, 312, 303, 318, 289, 327, 243, 327, 227, 322, 225, 271, 152, 258, 153, 320, 117, 321, 112, 335, -3, 334, -1, 511, 2049, 513, 1994, 513, 2013, 462, 2004, 410, 1980, 397, 1986, 269, 2050, 0, 2000.1212, 209.64651, 1986, 269, 1882, 274, 1876, 311, 1824, 328, 1779, 327, 1758, 318, 1757, 272, 1693, 267, 1679, 328, 1581, 329, 1579, 288, 1513, 266, 1504, 320, 1415, 320, 1416, 292, 1369, 272, 1369, 329, 1247, 329, 1247, 275, 1168, 265, 1168, 314, 1033, 316, 1033, 260, 995, 261, 991, 325, 879, 327, 880, 269, 857, 270, 857, 312, 801, 329, 755, 329, 735, 320, 738, 267, 661, 254, 5, 0, 5, -25, 2104, -18, 2104, 516, 1991, 576, -81, 598, -60, -6, 5, 0)
+
+[node name="Player" parent="." instance=ExtResource("5_f3nwb")]
+position = Vector2(0, 387)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.25, 1.25)
+limit_left = 0
+limit_top = 0
+limit_right = 2048
+limit_bottom = 512
+position_smoothing_enabled = true
+
+[node name="UI" parent="." instance=ExtResource("6_57lp3")]
